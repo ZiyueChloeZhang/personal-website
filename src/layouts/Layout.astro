@@ -12,7 +12,10 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/tech/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,18 +25,69 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+		--clr-primary: #EB2563;
+		--clr-primary-light: #EE497D;
+		--clr-primary-dark: #D2134F;
+
+		--clr-secondary: #111827;
+		--clr-secondary-light: #172135;
+		--clr-secondary-dark: #090D15;
+
+		--clr-white: #EFF2F5;
+		--clr-white-light: #FFFFFF;
+		--clr-white-dark: #E3E8ED;
+
+		--clr-black: #060504;
+		--clr-black-light: #120F0C;
+		--clr-black-dark: #000000;
+
+		--ff-base: 'Source Code Pro', monospace;
+
+		--fw-regurlar: 400;
+		--fw-bold: 700;
+
+		--fs-100: 1rem;
+		--fs-200: 1.25rem;
+		--fs-300: 1.5rem;
+		--fs-400: 1.875rem;
+		--fs-500: 2.25rem;
+		--fs-600: 3rem;
+		--fs-700: 3.75rem;
 	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	img,
+	svg {
+		max-width: 100%;
+		display: block;
+	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151A;
-		background-size: 224px;
+		color-scheme: normal;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+
+	body {
+		color: var(--clr-black);
+		font-family: var(--ff-base);
+		font-size: var(--fs-300);
+		font-weight: var(--fw-regurlar);
+		line-height: 1.5;
+	}
+
+	h1 {
+		font-size: var(--fs-700);
+	}
+
+	h2 {
+		font-size: var(--fs-500);
+	}
+
+	h3 {
+		font-size: var(--fs-300);
 	}
 </style>

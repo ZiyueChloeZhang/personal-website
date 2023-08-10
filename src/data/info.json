@@ -1,0 +1,89 @@
+{
+  "name": "Chloe Zhang",
+  "about":"a crochet\uD83E\uDDF6 enthusiast who also happens to weave captivating code. With a Computer Science degree from UBC, I've merged my love for crocheting with crafting digital magic. From turning intricate crochet patterns into adorable real-life stuffies\uD83E\uDDF8 to blending creativity and technology, I'm all about the art of detail. Join me as I spin both digital and tangible yarns, creating a world where crafts and code collide!",
+  "experiences": [
+    {
+      "title": "Software Developer Co-op",
+      "companyName": "Copperleaf Technology",
+      "companyWebsiteUrl": "https://www.copperleaf.com/",
+      "startTime": "Jan 2023",
+      "endTime": "Aug 2023",
+      "descriptions": [
+        "Contributed to the front-end migration, modernizing .Net ASPX to Angular for an improved user experience, leveraging the company’s design system’s components and utilities.",
+        "Implemented end-to-end Integration testing using Selenium, reduced manual regression effort and gaining in-depth codebase insights.",
+        "Developed a comprehensive understanding of backend technologies, including .NET and Oracle SQL.",
+        "Extracted and refactored reusable business logic into RESTful API endpoints, ensuring seamless front-end integration.",
+        "Proactively addressed user experience improvement tickets and bugs, promptly resolving issues for enhanced usability and accessibility."
+      ],
+      "techStacks": [
+        "Angular",
+        "Selenium",
+        "Oracle",
+        "RxJS",
+        "TypeScript",
+        "c-sharp",
+        "dotNet"
+      ]
+    },
+    {
+      "title": "Cloud Developer Co-op",
+      "companyName": "Change Healthcare",
+      "companyWebsiteUrl": "https://www.changehealthcare.com/",
+      "startTime": "May 2022",
+      "endTime": "Dec 2022",
+      "descriptions": [
+        "Participated in the implementation of a web-based Medical Case Sharing Platform, hosted on GCP Cloud Run, enabling the creation, sharing, viewing and comparison of various medical cases.",
+        "Developed a seamless case categorization UI using React and Redux with infinite scroll pagination functionality.",
+        "Designed and implemented a recursive search functionality, enabling users to efficiently navigate and locate case files within a structured UI folder hierarchy.",
+        "Collaborated on the design of relational database table schema, and implemented RESTful APIs through Node.JS, facilitating CRUD operations on Google Cloud Spanner.",
+        "Wrote comprehensive Jest Unit tests to enhance code quality and ensure robustness across the application."
+      ],
+      "techStacks": [
+        "React",
+        "Redux",
+        "GoogleCloud",
+        "GoogleCloudRun",
+        "JavaScript",
+        "NodeJs",
+        "Jest"
+      ]
+    },
+    {
+      "title": "Teaching Assistant",
+      "companyName": "UBC CPSC455",
+      "companyWebsiteUrl": "https://blogs.ubc.ca/cpsc4552023s/",
+      "startTime": "May 2023",
+      "endTime": "Aug 2023",
+      "descriptions": [
+        "Assisted 150 students in CPSC 455 Applied Industry Practices, a project-based course focusing on web development from React, Express, MongoDB to deployment.",
+        "Delivered a Git workflow mini-lecture, introducing version control and collaborative development processes",
+        "Supported students in bi-weekly office hours, aiding coding challenges and production-ready solutions.",
+        "Hosted design review sessions for 5 groups, fostering innovation and problem-solving in software development."
+      ],
+      "techStacks": [
+        "git",
+        "react",
+        "redux",
+        "mongodb",
+        "nodejs",
+        "express"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Connect Four",
+      "course": null,
+      "description": "",
+      "githubLink": "",
+      "liveProjectLink": "",
+      "creditLink": "",
+      "techStacks": [
+        "Angular",
+        "Selenium",
+        "Oracle",
+        "RxJS"
+      ]
+    }
+  ]
+}

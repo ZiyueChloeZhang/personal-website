@@ -1,0 +1,41 @@
+---
+import * as info from "../data/info.json";
+import Experience from "./Experience.astro";
+---
+<section>
+    <h2>Experience</h2>
+    <ul>
+        {info.experiences.map((experience) => <li><Experience {...experience}/></li>)}
+    </ul>
+</section>
+
+<style>
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        display: grid;
+        gap: 2rem;
+        grid-auto-flow: column;
+        overflow-x: auto;
+        justify-content: start;
+    }
+
+    ul::-webkit-scrollbar {
+        height: 0.2rem;
+    }
+
+    ul::-webkit-scrollbar-track {
+        background-color:var(--clr-white-dark);
+        border-radius: 100vh;
+    }
+
+    ul::-webkit-scrollbar-thumb{
+        background-color:var(--clr-primary-light);
+        border-radius: 100vh;
+    }
+
+    li {
+        width: 28rem;
+    }
+</style>

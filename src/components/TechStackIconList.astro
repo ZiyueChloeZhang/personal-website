@@ -1,0 +1,31 @@
+---
+import type {ITechStackIconListProps} from "../types";
+const {techStack} = Astro.props as ITechStackIconListProps;
+---
+<ul>
+    {techStack.map((techName =>
+                    <li>
+                        <img src={`/tech/${techName.toLowerCase()}.svg`}  alt={techName}/>
+                    </li>
+    ))}
+</ul>
+
+<style>
+    * {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style-position: inside;
+        padding-left: 0;
+        height: fit-content;
+    }
+    img {
+        width: var(--fs-500);
+    }
+</style>

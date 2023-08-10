@@ -1,0 +1,10 @@
+---
+import {IExperienceProps, IHeroProps} from "../types";
+const { name, about } = Astro.props as IExperienceProps;
+---
+<section>
+    <h1>Hi! I am {name}, </h1>
+    <p>
+        {about}
+    </p>
+</section>

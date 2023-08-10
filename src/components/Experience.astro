@@ -1,0 +1,46 @@
+---
+import {IExperienceProps} from "../types";
+import TechStackIconList from "./TechStackIconList.astro";
+const {title,companyWebsiteUrl, companyName, endTime, startTime, techStacks, descriptions} = Astro.props as IExperienceProps;
+---
+<section>
+    <div>
+        <h3>{title}</h3>
+        <p class="company"><a href={companyWebsiteUrl}>@{companyName}</a></p>
+        <p class="date">{startTime} - {endTime}</p>
+    </div>
+    <ul>
+        {descriptions.map((description => <li>{description}</li>))}
+    </ul>
+    <TechStackIconList class="iconList" techStack={techStacks}/>
+</section>
+
+<style>
+    h3, p{
+        margin: 0;
+    }
+
+    p.company {
+        font-size: var(--fs-200);
+    }
+    p.company a{
+        color: var(--clr-primary);
+        text-decoration: none;
+    }
+    p.date {
+        font-size: var(--fs-100);
+    }
+
+    ul {
+        list-style-type: disc;
+        font-size: var(--fs-100);
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+
+    section {
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+</style>
