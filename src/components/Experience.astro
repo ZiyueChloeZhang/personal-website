@@ -4,15 +4,17 @@ import TechStackIconList from "./TechStackIconList.astro";
 const {title,companyWebsiteUrl, companyName, endTime, startTime, techStacks, descriptions} = Astro.props as IExperienceProps;
 ---
 <section>
-    <div>
-        <h3>{title}</h3>
-        <p class="company"><a href={companyWebsiteUrl}>@{companyName}</a></p>
-        <p class="date">{startTime} - {endTime}</p>
+    <div class="summary">
+        <div>
+            <h3>{title}</h3>
+            <p class="company"><a href={companyWebsiteUrl}>@{companyName}</a></p>
+            <p class="date">{startTime} - {endTime}</p>
+        </div>
+        <TechStackIconList class="iconList" techStack={techStacks}/>
     </div>
     <ul>
         {descriptions.map((description => <li>{description}</li>))}
     </ul>
-    <TechStackIconList class="iconList" techStack={techStacks}/>
 </section>
 
 <style>
@@ -38,9 +40,17 @@ const {title,companyWebsiteUrl, companyName, endTime, startTime, techStacks, des
         padding-top: 1rem;
     }
 
-    section {
-        height: 100%;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
+    .summary {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
+
+    section {
+        background-color: var(--clr-white);
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
 </style>
