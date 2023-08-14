@@ -1,56 +1,87 @@
 ---
 import {IExperienceProps} from "../types";
-import TechStackIconList from "./TechStackIconList.astro";
-const {title,companyWebsiteUrl, companyName, endTime, startTime, techStacks, descriptions} = Astro.props as IExperienceProps;
+import Chip from "./ui/Chip.astro";
+const {id, title,companyWebsiteUrl, companyName, endTime, startTime, techStacks, descriptions} = Astro.props as IExperienceProps;
 ---
 <section>
     <div class="summary">
-        <div>
-            <h3>{title}</h3>
-            <p class="company"><a href={companyWebsiteUrl}>@{companyName}</a></p>
-            <p class="date">{startTime} - {endTime}</p>
-        </div>
-        <TechStackIconList class="iconList" techStack={techStacks}/>
+        <p class="date">{startTime} - {endTime}</p>
+        <h3>{title}</h3>
+        <p class="company"><a href={companyWebsiteUrl}>@{companyName}</a></p>
+        <ul class="techStack">
+            {techStacks.map(stack => <li><Chip label={stack}/></li>)}
+        </ul>
     </div>
-    <ul>
-        {descriptions.map((description => <li>{description}</li>))}
-    </ul>
+    <div class="details" id={id}>
+        <button id="toggle-details-btn">more details</button>
+        <ul>
+            {descriptions.map((description => <li>{description}</li>))}
+        </ul>
+    </div>
 </section>
 
 <style>
     h3, p{
         margin: 0;
+        color: var(--clr-black-light)
     }
 
     p.company {
         font-size: var(--fs-200);
     }
-    p.company a{
-        color: var(--clr-primary);
-        text-decoration: none;
-    }
+
     p.date {
         font-size: var(--fs-100);
     }
 
-    ul {
+    .details ul{
+        display: none;
         list-style-type: disc;
-        font-size: var(--fs-100);
-        padding-left: 1rem;
-        padding-top: 1rem;
+        list-style-position: inside;
+        font-size: var(--fs-200);
+        padding: 0;
+    }
+
+    .details.visible ul{
+        display: block;
+    }
+
+    ul.techStack {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 0.5rem;
     }
 
     .summary {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        gap: 0.25rem;
     }
 
-    section {
-        background-color: var(--clr-white);
-        padding: 1.5rem;
-        border-radius: 1rem;
+    button {
+        border: none;
+        font-size: var(--fs-100);
+        font-family: var(--ff-base);
+        background: transparent;
+        color: var(--clr-primary-dark);
+        padding: 0;
     }
-
+    button:hover {
+        cursor: pointer;
+    }
 </style>
+
+<script>
+    const buttons = document.querySelectorAll('.details button#toggle-details-btn');
+
+    // Handle clicks on each button.
+    buttons.forEach((button) => {
+        let isExpanded = false;
+        button.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            button.innerHTML = isExpanded ? "less details" : "more details";
+            button.parentElement.classList.toggle('visible');
+        });
+    });
+</script>

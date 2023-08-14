@@ -3,6 +3,7 @@
   "about":"a crochet\uD83E\uDDF6 enthusiast who also happens to weave captivating code. With a Computer Science degree from UBC, I've merged my love for crocheting with crafting digital magic. From turning intricate crochet patterns into adorable real-life stuffies\uD83E\uDDF8 to blending creativity and technology, I'm all about the art of detail. Join me as I spin both digital and tangible yarns, creating a world where crafts and code collide!",
   "experiences": [
     {
+      "id": "copperleaf",
       "title": "Software Developer Co-op",
       "companyName": "Copperleaf Technology",
       "companyWebsiteUrl": "https://www.copperleaf.com/",
@@ -18,14 +19,15 @@
       "techStacks": [
         "Angular",
         "Selenium",
-        "Oracle",
+        "OracleDB",
         "RxJS",
         "TypeScript",
-        "c-sharp",
-        "dotNet"
+        "C#",
+        ".Net"
       ]
     },
     {
+      "id": "changeHealthcare",
       "title": "Cloud Developer Co-op",
       "companyName": "Change Healthcare",
       "companyWebsiteUrl": "https://www.changehealthcare.com/",
@@ -49,6 +51,7 @@
       ]
     },
     {
+      "id": "CPSC455",
       "title": "Teaching Assistant",
       "companyName": "UBC CPSC455",
       "companyWebsiteUrl": "https://blogs.ubc.ca/cpsc4552023s/",
@@ -72,17 +75,50 @@
   ],
   "projects": [
     {
+      "id": "connect-four",
+      "screenshotPath": "/project/connect-four.png",
       "name": "Connect Four",
       "course": null,
-      "description": "",
-      "githubLink": "",
-      "liveProjectLink": "",
-      "creditLink": "",
+      "description": "A captivating online adaptation of the classic Connect Four game, offering peer-to-peer gameplay and a visually engaging user interface.",
+      "githubLink": "https://github.com/ZiyueChloeZhang/connect-four",
+      "liveProjectLink": "https://connect-four-beta.vercel.app/",
       "techStacks": [
-        "Angular",
-        "Selenium",
-        "Oracle",
-        "RxJS"
+        "React",
+        "Sass",
+        "Jest",
+        "typescript"
+      ]
+    },
+    {
+      "id": "dictionary",
+      "screenshotPath": "/project/dictionary.png",
+      "name": "Dictionary Web App",
+      "course": null,
+      "description": "A user-friendly web application that provides swift and intuitive word look-ups, emphasizing responsive design and ease of use.",
+      "githubLink": "https://github.com/ZiyueChloeZhang/Dictionary-web-app",
+      "liveProjectLink": "https://dictionary-web-app-cz.vercel.app/",
+      "techStacks": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "useContext"
+      ]
+    },
+    {
+      "id": "easy-drive",
+      "name": "Easy Drive",
+      "course": "CPSC 455",
+      "description": "A digital platform that simplifies the process for learners to locate and connect with top-rated driving instructors in their vicinity.",
+      "githubLink": "https://github.com/ZiyueChloeZhang/easy-drive",
+      "liveProjectLink": null,
+      "techStacks": [
+        "React",
+        "Redux",
+        "MongoDB",
+        "NodeJS",
+        "Express",
+        "JavaScript"
       ]
     }
   ]

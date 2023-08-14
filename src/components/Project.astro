@@ -1,3 +1,47 @@
 ---
-
+import {IProjectProps} from "../types";
+import Chip from "./ui/Chip.astro";
+const {screenshotPath, id, name,course, techStacks, githubLink, liveProjectLink, description} = Astro.props as IProjectProps;
 ---
+<section>
+    <h3>{name}</h3>
+    <ul class="techStack">
+        {techStacks.map(stack => <li><Chip label={stack}/></li>)}
+    </ul>
+    {screenshotPath && <img src={screenshotPath} alt={name + 'screenshot'}/>}
+    <div class="links">
+        {liveProjectLink && <a href={liveProjectLink}>Live</a>}
+        <a href={githubLink}>GitHub</a>
+    </div>
+    <p>{description}</p>
+</section>
+
+<style>
+    section {
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    img {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul.techStack {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 0.5rem;
+    }
+</style>

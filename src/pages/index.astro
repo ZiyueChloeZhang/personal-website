@@ -2,25 +2,33 @@
 import * as info from "../data/info.json";
 import Layout from '../layouts/Layout.astro';
 import Hero from "../components/Hero.astro";
-import ExperienceList from "../components/ExperienceList.astro";
+import Experience from "../components/Experience.astro";
+import Project from "../components/Project.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
 <Layout title="Chloe Zhang">
-	<main>
-		<Hero name={info.name} about={info.about} />
-		<ExperienceList/>
-	</main>
-	<nav>
-
-	</nav>
+	<Hero name={info.name} about={info.about} />
+	<SectionLayout title="Experience">
+		<ul class="experience">
+			{info.experiences.map((experience) => <li><Experience {...experience}/></li>)}
+		</ul>
+	</SectionLayout>
+	<SectionLayout title="Projects">
+		<ul class="projects">
+			{info.projects.map((project) => <li><Project {...project}/></li>)}
+		</ul>
+	</SectionLayout>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 60rem;
-		max-width: calc(100% - 2rem);
+	ul.experience {
+		display: grid;
+		gap: 1.5rem;
 	}
-
+	ul.projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+		grid-gap: 1rem
+	}
 </style>
